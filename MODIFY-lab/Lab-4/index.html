@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myButton" class="btn">Submit</button>
+    <script>
+      setTimeout(function () {
+        document.getElementById("myButton").style.backgroundColor = "red";
+        setTimeout(function () {
+          document.getElementById("myButton").style.backgroundColor = "";
+        }, 3000);
+      }, 3000);
+    </script>
+  </body>
+</html>

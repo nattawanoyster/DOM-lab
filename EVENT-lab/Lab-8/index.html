@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .textHide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Hide</button>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <h2>ABCD</h2>
+
+    <script>
+      const button = document.querySelector("button");
+      let booButton = true;
+      function changeButton() {
+        const text = document.querySelector("h1");
+        if (booButton) {
+          booButton = !booButton;
+          this.innerText = "Show";
+          text.classList.add("textHide");
+        } else {
+          booButton = !booButton;
+          this.innerText = "Hide";
+          text.classList.remove("textHide");
+        }
+      }
+
+      button.addEventListener("click", changeButton);
+    </script>
+  </body>
+</html>

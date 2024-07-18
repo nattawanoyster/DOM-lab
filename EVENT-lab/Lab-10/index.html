@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dataAdress {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        gap: 5px;
+      }
+
+      .province,
+      .district {
+        display: flex;
+        gap: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dataAdress">
+      <div class="province">
+        <label>Province</label>
+        <select name="province" id="province">
+          <option value="Bangkok">Bangkok</option>
+          <option value="Phetchaburi">Phetchaburi</option>
+          <option value="Samutsakorn">Samutsakorn</option>
+        </select>
+      </div>
+
+      <div class="district">
+        <label>District</label>
+        <select name="district" id="district"></select>
+      </div>
+    </div>
+    <script>
+      const selectProvince = document.getElementById("province");
+      const selestDistrict = document.getElementById("district");
+
+      const data = {
+        Bangkok: ["Bang Khae", "Phaya Thai"],
+        Phetchaburi: ["Khao Yoi", "Nong Ya Plong"],
+        Samutsakorn: ["Katumban", "Mueang"],
+      };
+
+      function District(event) {
+        const province = event.target.value;
+        const districtArr = data[province];
+
+        selestDistrict.innerHTML = "";
+
+        districtArr.forEach((district) => {
+          const option = document.createElement("option");
+          option.innerHTML = district;
+          option.value = district;
+          selestDistrict.append(option);
+        });
+      }
+      selectProvince.addEventListener("change", District);
+    </script>
+  </body>
+</html>

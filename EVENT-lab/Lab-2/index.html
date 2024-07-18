@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="https://google.com/login">
+      <button type="button">Hit me to submit</button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    function alertEvent(event) {
+      event.preventDefault();
+      alert("Form is submitted");
+      form.removeEventListener("submit", alertEvent);
+    }
+    form.addEventListener("submit", alertEvent);
+  </script>
+</html>

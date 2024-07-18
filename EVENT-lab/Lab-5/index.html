@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="nickname" placeholder="Enter your nickname" />
+    <input type="text" name="job" placeholder="Enter your job" />
+    <script>
+      const input1 = document.querySelectorAll("input")[0];
+      const input2 = document.querySelectorAll("input")[1];
+      function logName(event) {
+        console.log(event.target.name);
+      }
+      function logInput(event) {
+        console.log(event.target.value);
+      }
+      input1.addEventListener("click", logName);
+      input1.addEventListener("input", logInput);
+      input2.addEventListener("click", logName);
+      input2.addEventListener("input", logInput);
+    </script>
+  </body>
+</html>
